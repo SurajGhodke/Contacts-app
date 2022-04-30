@@ -20,7 +20,7 @@ const Messages = () => {
 
   return (
     <div>
-      <table class="table table-striped">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
