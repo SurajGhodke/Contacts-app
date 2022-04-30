@@ -2,8 +2,8 @@ const express = require("express");
 var cors = require("cors");
 const dotenv = require("dotenv").config();
 const port = process.env.PORT || 5000;
-// const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// const authToken = process.env.TWILIO_AUTH_TOKEN;
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 var twilio = require("twilio");
 
 const app = express();
@@ -11,10 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Find your account sid and auth token in your Twilio account Console.
-var client = new twilio(
-  "ACa76abb884438927e89e11451adbb64a3",
-  "679e433753eb42455a0dbd1ea35623fb"
-);
+var client = new twilio(accountSid, authToken);
 
 //get all msg list
 app.get("/", (req, res) => {
